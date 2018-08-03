@@ -1,5 +1,13 @@
 .App {
   margin: auto;
-  width: 80%;
-  max-width: 920px;
+  width: 1200px;
+  margin-bottom: 200px;
+}
+
+.App .page {
+  margin-bottom: 1500px;
+}
+
+.swipeable-views {
+  align-items: center;
 }

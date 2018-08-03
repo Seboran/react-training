@@ -1,8 +1,20 @@
 .code-exposer {
     display: flex;
+    margin: auto;
+    padding: 30px;
+    width: 95%;
     flex-direction: row;
+    justify-content: space-around;
 }
 
 .element {
+    padding: 10px;
+    width: 50%;
+    height: auto;
+}
+
+pre {
+    padding: 0;
+    margin: 0;
     width: 50%;
 }
