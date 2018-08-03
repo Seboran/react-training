@@ -1,0 +1,8 @@
+.code-exposer {
+    display: flex;
+    flex-direction: row;
+}
+
+.element {
+    width: 50%;
+}
