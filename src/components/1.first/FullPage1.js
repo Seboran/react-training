@@ -14,6 +14,10 @@ export default function FullPage1() {
     <div>
       <Typography variant="display2">Principe des composants</Typography>
       <SwipeableViews className="swipeable-views" enableMouseEvents>
+        <div className="main-text">
+          <Typography variant="display1">Basé sur les composants</Typography>
+        </div>
+
         <div>
           <Typography variant="display1">Composants</Typography>
           <Context />
@@ -51,6 +55,7 @@ export default function FullPage1() {
         </div>
 
         <div>
+          <Typography variant="display1">La magie de JSX</Typography>
           <CodeExposer
             sourceCode={`import React from "react";
 import PropsDemo from "./PropsDemo";

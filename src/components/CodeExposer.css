@@ -13,7 +13,7 @@
     height: auto;
 }
 
-pre {
+.code-exposer pre {
     padding: 0;
     margin: 0;
     width: 50%;

@@ -8,6 +8,11 @@
   margin-bottom: 1500px;
 }
 
+.main-text {
+  padding: 50px;
+  text-align: center;
+}
+
 .swipeable-views {
   align-items: center;
 }
