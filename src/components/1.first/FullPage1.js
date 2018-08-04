@@ -2,18 +2,19 @@ import React from "react";
 // material-ui
 import Typography from "@material-ui/core/Typography";
 import Context from "./Context";
-import SwipeableViews from "react-swipeable-views";
 
 // components
 import CodeExposer from "../CodeExposer";
 import Composition from "./Composition";
 import JSX from "./JSX";
+import SwipeableKeyboard from "./../SwipeableKeyboard";
+
 
 export default function FullPage1() {
   return (
     <div>
       <Typography variant="display2">Principe des composants</Typography>
-      <SwipeableViews className="swipeable-views" enableMouseEvents>
+      <SwipeableKeyboard className="swipeable-views" >
         <div className="main-text">
           <Typography variant="display1">Basé sur les composants</Typography>
         </div>
@@ -77,7 +78,7 @@ export default function JSX() {
             component={() => <JSX />}
           />
         </div>
-      </SwipeableViews>
+      </SwipeableKeyboard>
     </div>
   );
 }

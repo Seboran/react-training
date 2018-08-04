@@ -1,17 +1,18 @@
 // yarn
 import React from "react";
 import Highlight from "react-highlight";
-import SwipeableViews from "react-swipeable-views";
 // material-ui
 import Typography from "@material-ui/core/Typography";
-import CodeExposer from "../CodeExposer";
 import StateDemo from "./StateDemo";
+
+// components
+import SwipeableKeyboard from "../SwipeableKeyboard";
 
 export default function FullPage2() {
   return (
     <div>
       <Typography variant="display2">Classes et flux</Typography>
-      <SwipeableViews>
+      <SwipeableKeyboard>
         <div>
           <Typography variant="display1">État d'un composant</Typography>
 
@@ -44,7 +45,7 @@ export default function FullPage2() {
         <Button onClick={this.deleteOneDirection}>Cacher les 1D 😢😢😢</Button>
         {oneDirection.map(singer => (
           <PropsDemo
-            key={singer.name + singer.surname}
+            key={singer.name+singer.surname}
             name={singer.name}
             surname={singer.surname}
           />
@@ -55,17 +56,19 @@ export default function FullPage2() {
 }
 `}
           </Highlight>
-          <div>
+          
+        </div>
+
+        <div>
             <StateDemo />
           </div>
-        </div>
 
         <div className="main-text">
           <Typography variant="display1">
             Flux d'information unidirectionnel
           </Typography>
         </div>
-      </SwipeableViews>
+      </SwipeableKeyboard>
     </div>
   );
 }

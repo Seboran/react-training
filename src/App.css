@@ -1,11 +1,8 @@
 .App {
   margin: auto;
-  width: 1200px;
+  min-width: 600px;
+  max-width: 1200px;
   margin-bottom: 200px;
-}
-
-.App .page {
-  margin-bottom: 1500px;
 }
 
 .main-text {
