@@ -13,7 +13,7 @@ export default function Context() {
       <CodeExposer
         sourceCode={`import React from "react";
 
-export default function HelloWorld() {
+function HelloWorld() {
   return <p>Hello world !</p>;
 }
 `}
@@ -22,7 +22,7 @@ export default function HelloWorld() {
       <CodeExposer
         sourceCode={`import React, { Component } from "react";
 
-export default class HelloWorld extends Component {
+class HelloWorld extends Component {
   render() {
     return <p>Hello world !</p>;
   }

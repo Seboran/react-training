@@ -45,8 +45,8 @@ export default class StateDemo extends Component {
 
     return (
       <div>
-        <Button onClick={this.getOneDirection}>Afficher les 1D 😍😍😍</Button>
-        <Button onClick={this.deleteOneDirection}>Cacher les 1D 😢😢😢</Button>
+        <Button onClick={this.getOneDirection}><span role="img" aria-label="hearts in eyes faces">😍😍😍</span></Button>
+        <Button onClick={this.deleteOneDirection}><span role="img" aria-label="crying faces faces">😢😢😢</span></Button>
         {oneDirection.map(singer => (
           <PropsDemo
             key={singer.name + singer.surname}

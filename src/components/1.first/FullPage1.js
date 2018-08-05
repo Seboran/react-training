@@ -8,29 +8,30 @@ import CodeExposer from "../CodeExposer";
 import Composition from "./Composition";
 import JSX from "./JSX";
 import SwipeableKeyboard from "./../SwipeableKeyboard";
-
+import MainPoints from "../MainPoints";
 
 export default function FullPage1() {
   return (
     <div>
       <Typography variant="display2">Principe des composants</Typography>
-      <SwipeableKeyboard className="swipeable-views" >
-        <div className="main-text">
-          <Typography variant="display1">Basé sur les composants</Typography>
-        </div>
-
+      <SwipeableKeyboard className="swipeable-views">
         <div>
           <Typography variant="display1">Composants</Typography>
           <Context />
         </div>
 
+        <MainPoints
+          points={[
+            "Les composants sont des classes ou des fonctions",
+            'Ils reçoivent des "props" comme on passe des attributs à des objets HTML'
+          ]}
+        />
+
         <div>
           <Typography variant="display1">Composition et props</Typography>
 
           <CodeExposer
-            sourceCode={`function PropsDemo(props) {
-  const { name, surname } = props;
-
+            sourceCode={`function PropsDemo({ name, surname }) {
   return (
     <div>
       {name} {surname}
