@@ -51,7 +51,7 @@ export default class ArrayDavidson extends Component {
         </IconButton>
         <List>
           {motorbikes.map(moto => (
-            <ListItem key="moto">
+            <ListItem key={moto}>
               <ListItemText>{moto}</ListItemText>
             </ListItem>
           ))}

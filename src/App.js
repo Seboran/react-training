@@ -65,7 +65,7 @@ class App extends Component {
         <div className="page" ref={section => (this[3] = section)}>
           <FullPage3 />
         </div>
-        <div
+        <div ref={section => (this[4] = section)}
           style={{
             display: "flex",
             flexDirection: "column",

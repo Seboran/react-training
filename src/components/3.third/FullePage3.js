@@ -11,7 +11,7 @@ export default function FullPage3() {
             "Il faut aimer l'ECMAScript 6 (ou ES6)",
             "Il faut aimer écrire librement",
             <a href="https://reactjs.org/">https://reactjs.org/</a>,
-            <a href="https://reactjs.org/">https://openclassrooms.com/</a>
+            <a href="https://openclassrooms.com/">https://openclassrooms.com/</a>
         ]}/>
         
         </div>

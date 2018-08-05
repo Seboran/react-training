@@ -19,20 +19,10 @@ export default function FullPage2() {
       <Typography variant="display2">Classes et flux</Typography>
 
       <SwipeableKeyboard>
-
         <div>
           <Typography variant="display1">2 buttons 1 state</Typography>
           <CodeExposer
-            sourceCode={`constructor(props) {
-  super(props);
-
-  this.state = {
-    count: 0
-  };
-};
-            
-            
-getOneDirection = () => {
+            sourceCode={`getOneDirection = () => {
   this.setState({ oneDirection: oneDirectionArray });
 };
 
@@ -41,17 +31,6 @@ deleteOneDirection = () => {
 };`}
             component={() => <StateDemo />}
           />
-        </div>
-        
-        <div>
-          <Typography variant="display1">Un bête compteur</Typography>
-          <Counter />
-        </div>
-        <div>
-          <Highlight language="javascript">{`<div>
-  <Button onClick={this.handleClick}>Incrémenter</Button>
-  <p>{this.state.count}</p>
-</div>`}</Highlight>
         </div>
 
         <MainPoints
@@ -62,14 +41,20 @@ deleteOneDirection = () => {
             "Cela signifie que cette mise à jour est une opération asynchrone"
           ]}
         />
-        <div>
-          <Highlight language="javascript">{`constructor() {
-  super();
 
-  this.state = {
-    count: 0
-  };
-}`}</Highlight>
+        <div>
+          <Typography variant="display1">Un bête compteur</Typography>
+          <Counter />
+          <Highlight language="javascript">{`this.state = { count: 0 }`}</Highlight>
+          <Highlight language="javascript">{`this.state.count += 1 // This is a SIN`}</Highlight>
+          <Highlight language="javascript">{`this.setState({ count: this.state.count + 1 }) // This is still a SIN`}</Highlight>
+        </div>
+
+        <div>
+          <Highlight language="javascript">{`<div>
+  <Button onClick={this.handleClick}>Incrémenter</Button>
+  <p>{this.state.count}</p>
+</div>`}</Highlight>
           <Highlight language="javascript">{`handleClick = () => {
   this.setState(function(prevState) {
     return { count: prevState.count + 1 };
@@ -78,7 +63,13 @@ deleteOneDirection = () => {
           <Counter />
         </div>
 
-        
+        <MainPoints
+          points={[
+            "this.setState est la SEULE façon de mettre à jour un composant",
+            "this.setState peut prendre un nouvel état ou une fonction",
+            "this.setState a besoin d'un contexte bien défini : il faut bind les fonctions qui l'utilisent"
+          ]}
+        />
 
         <div>
           <Typography variant="display1">Lifting state up</Typography>
@@ -96,6 +87,13 @@ deleteOneDirection = () => {
           </Highlight>
           <CelciusToFarhenheit />
         </div>
+
+        <MainPoints
+          points={[
+            "Deux composants ne peuvent pas communiquer entre eux directement",
+            "Cela doit toujours se faire à travers le composant parent"
+          ]}
+        />
 
         <Highlight language="javascript">{`render() {
     const { celcius, fahrenheit } = this.state;
@@ -153,12 +151,9 @@ deleteOneDirection = () => {
         <div>
           <Typography variant="display1">Array Davidson</Typography>
           <ArrayDavidson />
-
-          
         </div>
-
-
-        <Highlight language="javascript">{`constructor(props) {
+        <div>
+          <Highlight language="javascript">{`constructor(props) {
   super(props);
   this.state = {
     motorbikes: ["Honda", "BMW", "Suzuki"],
@@ -181,6 +176,8 @@ addBike = () => {
     return newState;
   });
 };`}</Highlight>
+          <ArrayDavidson />
+        </div>
       </SwipeableKeyboard>
     </div>
   );
