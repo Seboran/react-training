@@ -6,6 +6,7 @@ import "./App.css";
 import FullPage from "./components/0.zero/FullPage";
 import FullPage1 from "./components/1.first/FullPage1";
 import FullPage2 from "./components/2.second/FullPage2";
+import FullPage3 from "./components/3.third/FullePage3";
 
 class App extends Component {
   constructor() {
@@ -56,6 +57,9 @@ class App extends Component {
         </div>
         <div className="page" ref={section => (this[2] = section)}>
           <FullPage2 />
+        </div>
+        <div className="page" ref={section => (this[3] = section)}>
+          <FullPage3 />
         </div>
       </div>
     );

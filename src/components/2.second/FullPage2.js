@@ -10,6 +10,7 @@ import SwipeableKeyboard from "../SwipeableKeyboard";
 import MainPoints from "../MainPoints";
 import CelciusToFarhenheit from "./CelciusToFarhenheit";
 import Counter from "./Counter";
+import CodeExposer from "../CodeExposer";
 
 export default function FullPage2() {
   return (
@@ -31,6 +32,7 @@ export default function FullPage2() {
         <MainPoints
           points={[
             "this.state : respecter le cycle de vie d'un composant",
+            "this.state est \"inmutable\"",
             "React met à jour l'affichage des composants automatiquement",
             "Cela signifie que cette mise à jour est une opération asynchrone"
           ]}
@@ -44,60 +46,34 @@ export default function FullPage2() {
   };
 }`}</Highlight>
           <Highlight language="javascript">{`handleClick = () => {
-  this.setState(prevState => {
+  this.setState(function(prevState) {
     return { count: prevState.count + 1 };
   });
 };`}</Highlight>
-<Counter />
+          <Counter />
         </div>
 
         <div>
-          <Typography variant="display1">État d'un composant</Typography>
+          <Typography variant="display1">2 buttons 1 state</Typography>
+          <CodeExposer
+            sourceCode={`constructor(props) {
+  super(props);
 
-          <Highlight language="javascript">
-            {`class StateDemo extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      oneDirection: []
-    };
-  }
-
-  getOneDirection = () => {
-    this.setState({
-      oneDirection: oneDirectionArray
-    });
+  this.state = {
+    count: 0
   };
+};
+            
+            
+getOneDirection = () => {
+  this.setState({ oneDirection: oneDirectionArray });
+};
 
-  deleteOneDirection = () => {
-    this.setState({ oneDirection: [] });
-  };
-
-  render() {
-    const { oneDirection } = this.state;
-
-    return (
-      <div>
-        <Button onClick={this.getOneDirection}>😍😍😍</Button>
-        <Button onClick={this.deleteOneDirection}>😢😢😢</Button>
-        {oneDirection.map(singer => (
-          <PropsDemo
-            key={singer.name+singer.surname}
-            name={singer.name}
-            surname={singer.surname}
+deleteOneDirection = () => {
+  this.setState({ oneDirection: [] });
+};`}
+            component={() => <StateDemo />}
           />
-        ))}
-      </div>
-    );
-  }
-}
-`}
-          </Highlight>
-        </div>
-
-        <div className="page-element" style={{ margin: "auto" }}>
-          <StateDemo />
         </div>
 
         <div>
