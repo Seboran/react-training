@@ -19,6 +19,30 @@ export default function FullPage2() {
       <Typography variant="display2">Classes et flux</Typography>
 
       <SwipeableKeyboard>
+
+        <div>
+          <Typography variant="display1">2 buttons 1 state</Typography>
+          <CodeExposer
+            sourceCode={`constructor(props) {
+  super(props);
+
+  this.state = {
+    count: 0
+  };
+};
+            
+            
+getOneDirection = () => {
+  this.setState({ oneDirection: oneDirectionArray });
+};
+
+deleteOneDirection = () => {
+  this.setState({ oneDirection: [] });
+};`}
+            component={() => <StateDemo />}
+          />
+        </div>
+        
         <div>
           <Typography variant="display1">Un bête compteur</Typography>
           <Counter />
@@ -54,28 +78,7 @@ export default function FullPage2() {
           <Counter />
         </div>
 
-        <div>
-          <Typography variant="display1">2 buttons 1 state</Typography>
-          <CodeExposer
-            sourceCode={`constructor(props) {
-  super(props);
-
-  this.state = {
-    count: 0
-  };
-};
-            
-            
-getOneDirection = () => {
-  this.setState({ oneDirection: oneDirectionArray });
-};
-
-deleteOneDirection = () => {
-  this.setState({ oneDirection: [] });
-};`}
-            component={() => <StateDemo />}
-          />
-        </div>
+        
 
         <div>
           <Typography variant="display1">Lifting state up</Typography>
@@ -168,7 +171,6 @@ handleChange = event => {
 };
 
 addBike = () => {
-  if (!this.state.newBike) return;
 
   this.setState(function(prevState) {
     const newState = {
