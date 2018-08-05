@@ -1,4 +1,5 @@
 import React from "react";
+import Highlight from "react-highlight";
 // material-ui
 import Typography from "@material-ui/core/Typography";
 import Context from "./Context";
@@ -79,6 +80,32 @@ export default function JSX() {
             component={() => <JSX />}
           />
         </div>
+
+        <MainPoints
+          points={[
+            'Les props sont "immutables"',
+            "On peut définir leur type avec PropTypes",
+            
+          ]}
+        />
+        <Highlight language="javascript">{`import React from "react";
+import PropTypes from "prop-types";
+
+function PropsDemo(props) {
+  const { name, surname } = props;
+
+  return (
+    <div>
+      {name} {surname}
+    </div>
+  );
+}
+
+PropsDemo.propTypes = {
+  name: PropTypes.string.isRequired,
+  surname: PropTypes.string.isRequired
+};
+`}</Highlight>
       </SwipeableKeyboard>
     </div>
   );

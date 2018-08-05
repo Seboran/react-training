@@ -11,6 +11,7 @@ import MainPoints from "../MainPoints";
 import CelciusToFarhenheit from "./CelciusToFarhenheit";
 import Counter from "./Counter";
 import CodeExposer from "../CodeExposer";
+import ArrayDavidson from "./ArrayDavidson";
 
 export default function FullPage2() {
   return (
@@ -32,7 +33,7 @@ export default function FullPage2() {
         <MainPoints
           points={[
             "this.state : respecter le cycle de vie d'un composant",
-            "this.state est \"inmutable\"",
+            'this.state est "immutable"',
             "React met à jour l'affichage des composants automatiquement",
             "Cela signifie que cette mise à jour est une opération asynchrone"
           ]}
@@ -115,7 +116,8 @@ deleteOneDirection = () => {
       </div>
     );
   }`}</Highlight>
-        <Highlight language="javascript">{`constructor(props) {
+        <div>
+          <Highlight language="javascript">{`constructor(props) {
     super(props);
 
     this.state = {
@@ -123,6 +125,60 @@ deleteOneDirection = () => {
       fahrenheit: 32
     };
   }`}</Highlight>
+
+          <Highlight language="javascript">{`handleChange = valueName => event => {
+
+  const newValue = parseInt(event.target.value);
+
+  if (valueName === "celcius") {
+    
+    this.setState({
+      celcius: newValue,
+      fahrenheit: this.C2F(newValue)
+    });
+
+  } else {
+
+    this.setState({
+      fahrenheit: newValue,
+      celcius: this.F2C(newValue)
+    });
+  }
+};`}</Highlight>
+        </div>
+
+        <div>
+          <Typography variant="display1">Array Davidson</Typography>
+          <ArrayDavidson />
+
+          
+        </div>
+
+
+        <Highlight language="javascript">{`constructor(props) {
+  super(props);
+  this.state = {
+    motorbikes: ["Honda", "BMW", "Suzuki"],
+    newBike: ""
+  };
+}
+
+handleChange = event => {
+  this.setState({ newBike: event.target.value });
+};
+
+addBike = () => {
+  if (!this.state.newBike) return;
+
+  this.setState(function(prevState) {
+    const newState = {
+      newBike: "",
+      motorbikes: [prevState.newBike, ...prevState.motorbikes]
+    };
+
+    return newState;
+  });
+};`}</Highlight>
       </SwipeableKeyboard>
     </div>
   );

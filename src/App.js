@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import scrollToComponent from "react-scroll-to-component";
 import "./App.css";
 
+import Typography from "@material-ui/core/Typography";
+
 // components
 import FullPage from "./components/0.zero/FullPage";
 import FullPage1 from "./components/1.first/FullPage1";
@@ -24,7 +26,6 @@ class App extends Component {
    * @param {KeyboardEvent} event
    */
   handleKeyPress = event => {
-
     let increment = 0;
 
     if (event.key === "ArrowDown") {
@@ -40,10 +41,13 @@ class App extends Component {
         prevState => {
           return { currentPage: prevState.currentPage + increment };
         },
-        () => scrollToComponent(this[this.state.currentPage], {offset: -50, align: 'top'})
+        () =>
+          scrollToComponent(this[this.state.currentPage], {
+            offset: -50,
+            align: "top"
+          })
       );
     }
-    
   };
 
   render() {
@@ -60,6 +64,28 @@ class App extends Component {
         </div>
         <div className="page" ref={section => (this[3] = section)}>
           <FullPage3 />
+        </div>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            marginTop: 700,
+            marginBottom: 700
+          }}
+        >
+          <div>
+            <span
+              role="img"
+              aria-label="heart"
+              style={{ fontSize: 200, margin: "auto" }}
+            >
+              💖
+            </span>
+          </div>
+          <Typography variant="display4" align="center">
+            Merci pour votre attention
+          </Typography>
         </div>
       </div>
     );

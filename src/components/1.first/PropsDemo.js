@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 /**
  *
@@ -15,3 +16,8 @@ export default function PropsDemo(props) {
     </div>
   );
 }
+
+PropsDemo.propTypes = {
+  name: PropTypes.string.isRequired,
+  surname: PropTypes.string.isRequired
+};

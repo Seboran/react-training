@@ -26,7 +26,7 @@ export default function FullPage() {
             "Beaucoup de boilerplate code",
             'Programmation un peu "hacky"',
             "Pas de standards de programmation",
-            "Difficultés à suivre les cycles de vie des packages"
+            "Risque de faire du spaghetti code 🍝"
           ]}
         />
       </SwipeableKeyboard>
