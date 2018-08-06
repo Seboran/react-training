@@ -19,6 +19,23 @@ export default function FullPage1() {
         <div>
           <Typography variant="display1">Composants</Typography>
           <Context />
+          <Highlight language="javascript">{`import React, { Component } from "react";
+import HelloWorld from "./HelloWorld";
+import "./App.css";
+
+class App extends Component {
+
+  render() {
+    return (
+      <div className="App">
+        <HelloWorld />
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(<App />, document.getElementById('root'));
+`}</Highlight>
         </div>
 
         <MainPoints
@@ -84,8 +101,7 @@ export default function JSX() {
         <MainPoints
           points={[
             'Les props sont "immutables"',
-            "On peut définir leur type avec PropTypes",
-            
+            "On peut définir leur type avec PropTypes"
           ]}
         />
         <Highlight language="javascript">{`import React from "react";
